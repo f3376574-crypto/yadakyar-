@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>یدک‌یار | فروشگاه تخصصی لوازم یدکی خودرو</title>
+<meta name="description" content="فروشگاه آنلاین لوازم یدکی خودرو با جستجوی قطعه بر اساس خودرو، مدل و سال">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="topbar"><div>پشتیبانی: 0912 123 4567</div><div>ارسال به سراسر ایران • ضمانت اصالت کالا</div></div>
+
+<header>
+  <div class="header-main">
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <a class="logo" href="#"><span>یدک‌یار</span><small>فروشگاه تخصصی لوازم یدکی</small></a>
+    <div class="search"><input id="searchInput" placeholder="جستجوی قطعه، برند یا کد فنی..." oninput="filterProducts()"><button onclick="filterProducts()">جستجو</button></div>
+    <button class="cart-btn" onclick="openCart()">🛒 سبد خرید <b id="cartCount">0</b></button>
+  </div>
+  <nav id="nav"><a class="active" href="#">صفحه اصلی</a><a href="#categories">دسته‌بندی قطعات</a><a href="#brands">برند خودرو</a><a href="#products">پرفروش‌ها</a><a href="#articles">مجله خودرو</a><a href="#contact">تماس با ما</a></nav>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-overlay">
+    <p class="eyebrow">فروش آنلاین قطعات خودرو</p>
+    <h1>قطعه مورد نظرتان را<br><strong>سریع و آسان پیدا کنید</strong></h1>
+    <p>خودرو را انتخاب کنید تا فقط قطعات سازگار با خودروی شما نمایش داده شود.</p>
+    <div class="fit-search">
+      <select id="brand"><option value="">انتخاب برند خودرو</option><option>ایران خودرو</option><option>سایپا</option><option>کیا</option><option>هیوندای</option><option>تویوتا</option><option>پژو</option><option>رنو</option><option>BMW</option><option>مرسدس بنز</option></select>
+      <select id="model"><option value="">انتخاب مدل</option><option>206</option><option>207</option><option>پارس</option><option>دنا</option><option>شاهین</option><option>تارا</option><option>سانتافه</option><option>سراتو</option></select>
+      <select><option>انتخاب سال</option><option>1404</option><option>1403</option><option>1402</option><option>1401</option><option>1400</option></select>
+      <button onclick="vehicleSearch()">🔎 جستجوی قطعات</button>
+    </div>
+    <div class="benefits"><span>🛡️ ضمانت اصالت کالا</span><span>🚚 ارسال سریع</span><span>👨‍🔧 پشتیبانی تخصصی</span><span>↩️ ۷ روز ضمانت بازگشت</span></div>
+  </div>
+</section>
+
+<section class="section" id="brands"><div class="section-head"><h2>برندهای خودرو</h2><a href="#">مشاهده همه ←</a></div>
+<div class="brand-grid"><div>🚘<b>ایران‌خودرو</b></div><div>🚙<b>سایپا</b></div><div>◉<b>پژو</b></div><div>🔴<b>KIA</b></div><div>🔵<b>Hyundai</b></div><div>⭕<b>Toyota</b></div><div>⚪<b>Nissan</b></div><div>★<b>BMW</b></div></div></section>
+
+<section class="section" id="categories"><div class="section-head"><h2>دسته‌بندی قطعات</h2><a href="#">همه دسته‌ها ←</a></div>
+<div class="category-grid">
+<div>⚙️<b>لوازم موتور</b><small>فیلتر، تسمه، شمع و...</small></div><div>🛞<b>سیستم ترمز</b><small>لنت، دیسک، کالیپر</small></div>
+<div>🔧<b>جلوبندی و تعلیق</b><small>کمک، طبق، سیبک</small></div><div>🔋<b>سیستم برق</b><small>باتری، چراغ، دینام</small></div>
+<div>❄️<b>سیستم خنک‌کننده</b><small>رادیاتور، واترپمپ</small></div><div>🛢️<b>روغن و فیلتر</b><small>روغن موتور و فیلترها</small></div>
+<div>🚗<b>بدنه و تزئینات</b><small>چراغ، آینه، سپر</small></div><div>🔩<b>تجهیزات جانبی</b><small>لوازم مصرفی و کاربردی</small></div>
+</div></section>
+
+<section class="section" id="products"><div class="section-head"><h2>پرفروش‌ترین محصولات</h2><a href="#">مشاهده همه ←</a></div>
+<div id="productGrid" class="products"></div></section>
+
+<section class="trust"><div>🛡️ <b>ضمانت اصالت</b><small>تضمین کیفیت کالا</small></div><div>💰 <b>بهترین قیمت</b><small>قیمت رقابتی بازار</small></div><div>🚚 <b>ارسال سریع</b><small>ارسال در کوتاه‌ترین زمان</small></div><div>☎️ <b>پشتیبانی ۲۴/۷</b><small>همیشه کنار شما هستیم</small></div></section>
+
+<section class="articles" id="articles"><div class="section-head"><h2>مجله خودرو</h2><a href="#">همه مقالات ←</a></div>
+<div class="article-grid"><article><div class="art-img">🛢️</div><h3>راهنمای انتخاب بهترین روغن موتور</h3><p>چطور روغن مناسب خودرو را انتخاب کنیم؟</p></article><article><div class="art-img">🛞</div><h3>علائم خرابی لنت ترمز خودرو</h3><p>چه زمانی باید لنت خودرو را تعویض کنیم؟</p></article><article><div class="art-img">🔧</div><h3>۵ نشانه خرابی جلوبندی</h3><p>علائم مهمی که نباید نادیده بگیرید.</p></article></div></section>
+</main>
+
+<footer id="contact"><div><h2>یدک‌یار</h2><p>فروشگاه تخصصی لوازم یدکی خودرو</p><p>قطعات باکیفیت، قیمت مناسب و ارسال به سراسر ایران.</p></div><div><h3>دسترسی سریع</h3><a>درباره ما</a><a>فروشگاه</a><a>پیگیری سفارش</a><a>قوانین و مقررات</a></div><div><h3>خدمات مشتریان</h3><a>راهنمای خرید</a><a>شرایط بازگشت کالا</a><a>پرسش‌های متداول</a></div><div><h3>ارتباط با ما</h3><p>📞 0912 123 4567</p><p>✉️ info@yadakyar.ir</p><p>📍 تهران، خیابان آزادی</p></div></footer>
+<div class="copyright">© ۱۴۰۵ یدک‌یار — تمامی حقوق محفوظ است.</div>
+
+<div class="modal" id="cartModal"><div class="modal-box"><button class="close" onclick="closeCart()">×</button><h2>سبد خرید</h2><div id="cartItems"></div><div class="total">جمع کل: <b id="cartTotal">۰ تومان</b></div><button class="checkout" onclick="alert('این نسخه آزمایشی است؛ درگاه پرداخت بعد از اتصال سایت فعال می‌شود.')">ادامه ثبت سفارش</button></div></div>
+<script src="script.js"></script>
+</body></html>
